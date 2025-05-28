@@ -46,7 +46,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text("✅ Journal entry saved! Keep it up!")
 
-# Set up the bot
+# Bot Setup
 def main():
     print("JournEase is running...")
     app = Application.builder().token(TOKEN).build()
@@ -59,11 +59,11 @@ def main():
     # Message handler for all text that isn’t a command
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-    # Start the bot
+    # Start bot
     print("Polling...")
     app.run_polling(poll_interval=3)
 
-# Run the bot
+# Run bot
 if __name__  == '__main__':
     main()
 
